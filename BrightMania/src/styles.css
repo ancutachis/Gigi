@@ -1,1 +1,180 @@
-/* You can add global styles to this file, and also import other style files */
+/* GENERAL */
+
+* {
+    font-family:"Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;
+    outline:0;
+    padding:0;
+    margin:0;
+    border:0;
+    text-decoration:none;
+    vertical-align:baseline;
+    white-space:normal;
+    line-height:1;
+    font-size:1em;
+}
+
+body {
+    text-align:center;
+    margin:0;
+    background-color:#DDD;
+    color:#222;
+    font:13px "Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;
+    min-width:940px;
+    padding-top:50px;
+}
+
+ul {
+    list-style-type:none;
+}
+
+a {
+    text-decoration:none;
+    color:#00A5F0;
+}
+
+a:hover {
+    color:#24BBFF;
+}
+
+html {
+    height:auto;
+}
+
+.hide { 
+    display:none !important;
+}
+
+/*-- MENU --*/
+
+#header {
+    width:100%;
+    text-align:center;
+    border-bottom:1px solid #444;
+    background:#000;
+    position:absolute;
+    top:0;
+    z-index:999;
+    left:0;
+}
+
+#header-div {
+    width:940px;
+    margin:auto;
+    text-align:left;
+    height:60px;
+    position:relative;
+}
+
+#logo {
+    float:left;
+    display:block;
+    margin:0 10px 0 0;
+}
+
+#nav {
+    float:left;
+    border-left:1px solid #444;
+}
+
+#nav li {
+    float:left;
+    display:block;
+}
+
+#nav a {
+    display:block;
+    padding:24px 20px 23px 50px;
+    font-size:13px;
+    color:#999;
+    border-right:1px solid #444;
+}
+
+#nav .li-1 a {
+    background:url(app/images/hot-on.png) no-repeat 20px 50%;
+}
+
+#nav .li-2 a {
+    background:url(app/images/hot-on.png) no-repeat 20px 50%;
+}
+
+#nav a:hover {
+    color:#fff;
+}
+
+#nav a.current {
+    color:#00A5F0;
+    background-color:#111;
+}
+
+#nav-right, #nav-right-r {
+    position:absolute;
+    top:0;
+}
+
+#nav-right {
+    right:130px;
+    border-left:1px solid #444;
+}
+
+#nav-right-r {
+    width:127px;
+    right:0px;
+}
+
+ul.nav-right-r li {
+    float:left;
+    height:60px;
+}
+
+#nav-right li {
+    float:left;
+    display:block;
+}
+
+#nav-right a {
+    display:block;
+    width:65px;
+    height:60px;
+    line-height:60px;
+    border-right:1px solid #444;
+}
+
+#nav-right .li-search a {
+    background:url(app/images/search.png) no-repeat 50% 50%;
+}
+
+#nav-right a:active {
+    background-position:50% 55%;
+}
+
+.side-register a {
+    color:#fff;
+    font-size:11px;
+    line-height:14px;
+    font-weight:bold;
+    padding:7px 10px;
+    margin:15px 9px 0;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    display:block;
+    text-shadow:0 -1px rgba(0,0,0,.2);
+    box-shadow:0 0 0 1px rgba(255,255,255,.2) inset;
+    text-align:center;
+    width:89px;
+}
+
+.side-register a.signup-button:hover {
+    background-color:#555;
+    color:#fff!important;
+    box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 1px 2px #111;
+}
+
+.side-register a.signup-button {
+    background-color:#00A5F0;
+}
+
+.side-register a.signup-button.blue {
+    -webkit-animation:glow 2s infinite;
+    -moz-animation:glow 2s infinite;
+}
