@@ -23,6 +23,7 @@
     float:left;
     display:block;
     margin:0 10px 0 0;
+    padding-top:5px;
 }
 
 #nav {
@@ -125,10 +126,7 @@ ul.nav-right-r li {
 }
 
 .side-register a.signup-button {
-    background-color:#00A5F0;
-}
-
-.side-register a.signup-button.blue {
+    background-color:#3256f3;
     -webkit-animation:glow 2s infinite;
     -moz-animation:glow 2s infinite;
 }

@@ -1,12 +1,11 @@
 article {
 	margin-bottom:30px;
-	border-top:1px solid #eee;
+	border-top:2px solid #eee;
 	padding:20px 0 0;
 }
 
 article:first-child {
 	border:0;
-	padding:0;
 }
 
 header {
@@ -21,16 +20,12 @@ h2 {
 }
 
 p.post-meta {
-	color:#999;
+	color:#587272;
 	margin:10px 0;
 }
 
-p.post-meta a {
-	color:#999;
-}
-
-p.post-meta a:hover {
-	text-decoration:underline;
+p.post-meta span {
+	font-size: 1.2em;
 }
 
 .post-container {
@@ -82,8 +77,8 @@ p.post-meta a:hover {
 }
 
 .post-afterbar-a .btn-share img {
-	width:48px;
-	height:48px;
+	width:45px;
+	height:45px;
 }
 
 .post-afterbar-a .btn-share img:hover {
@@ -111,29 +106,24 @@ p.post-meta a:hover {
 	background-repeat:no-repeat;
 	background-size:100%;
 	background-origin:content-box;
-	padding:0;
-	margin:3px;
+	padding-right:3px;
 	width:50px;
 	height:50px;
 	background-color:inherit;
 }
 
 .vote a.btn.btn-up {
-	background-image:url(../../images/up_black.png);
-}
-
-.vote a.btn.btn-up:hover {
-	background-image:url(../../images/up_active.png);
+	background-image:url(../../images/up.png);
 }
 
 .vote a.btn.btn-down {
-	background-image:url(../../images/down_black.png);
+	background-image:url(../../images/down.png);
 }
 
-.vote a.btn.btn-down:hover {
-	background-image:url(../../images/down_active.png);
+.vote a.btn.btn-wish {
+	background-image:url(../../images/wish.png);
 }
 
-.vote a.btn.btn-comment {
-	background-image:url(../../images/comment.png);
+.vote a.btn:hover {
+	opacity: 0.7;
 }
