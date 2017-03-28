@@ -1,4 +1,4 @@
-<article *ngFor="let product of coverProducts">
+<article *ngFor="let product of products">
   <header>
     <h2>{{product.title}}</h2>
   </header>
@@ -14,18 +14,18 @@
   </p>
   <div class="post-afterbar-a in-list-view">
     <div class="vote btn-vote">
-      <a href="javascript:void(0);" class="btn btn-up">
-        <svg role="img" height="30" width="30"></svg>
+      <a href="javascript:void(0);" (click)="voteUp(product.id);" class="btn btn-up">
+        <img height="30" width="30" />
       </a>
     </div>
     <div class="vote btn-vote">
-      <a href="javascript:void(0);" class="btn btn-down">
-        <svg role="img" height="30" width="30"></svg>
+      <a href="javascript:void(0);" (click)="voteDown(product.id);" class="btn btn-down">
+        <img height="30" width="30" />
       </a>
     </div>
     <div class="vote btn-vote">
-      <a href="javascript:void(0);" class="btn btn-wish">
-        <svg role="img" height="30" width="30"></svg>
+      <a href="javascript:void(0);" (click)="addToWishlist(product.id);" class="btn btn-wish">
+        <img height="30" width="30" />
       </a>
     </div>
     <div class="share right">
