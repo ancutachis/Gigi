@@ -40,7 +40,6 @@ p.post-meta a:hover {
 
 .post-container a {
 	display:block;
-	min-height:500px;
 }
 
 .post-container a img {
@@ -82,77 +81,13 @@ p.post-meta a:hover {
     float: right!important;
 }
 
-.post-afterbar-a .btn-share {
-	display:block;
-	color:#fff;
-	font-weight:700;
-	background-color:#f4f4f4;
-	padding:0 0 0 5px;
-	margin-top:2px;
-	width:45px;
-	height:50px;
-	text-align:center;
-	position:relative;
-	border-radius: 50%;
+.post-afterbar-a .btn-share img {
+	width:48px;
+	height:48px;
 }
 
-.post-afterbar-a .btn-share:after {
-	content:" ";
-	width:32px;
-	height:32px;
-	position:absolute;
-	top:50%;
-	margin-top:-15px;
-	left:2px;
-	background-size:240px 60px;
-}
-
-.post-afterbar-a .btn-share.facebook {
-	background-color:#3b5998;
-}
-
-.post-afterbar-a .btn-share.facebook:hover {
-	background-color:#4c70ba;
-}
-
-.post-afterbar-a .btn-share.facebook:active {
-	background-color:#36528c;
-}
-
-.post-afterbar-a .btn-share.twitter {
-	background:#00aced;
-}
-
-.post-afterbar-a .btn-share.twitter:hover {
-	background-color:#21c2ff;
-}
-
-.post-afterbar-a .btn-share.twitter:active {
-	background-color:#00a0dc;
-}
-
-.post-afterbar-a .btn-share.instagram {
-	background:#bc2a8d;
-}
-
-.post-afterbar-a .btn-share.instagram:hover {
-	background-color:#c23f98;
-}
-
-.post-afterbar-a .btn-share.instagram:active {
-	background-color:#bc2a8d;
-}
-
-.post-afterbar-a .btn-share.pinterest {
-	background:#cb2027;
-}
-
-.post-afterbar-a .btn-share.pinterest:hover {
-	background-color:#d0363c;
-}
-
-.post-afterbar-a .btn-share.pinterest:active {
-	background-color:#cb2027;
+.post-afterbar-a .btn-share img:hover {
+	opacity: 0.7;
 }
 
 .btn-vote {
