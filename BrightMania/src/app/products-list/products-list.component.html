@@ -1,41 +1,47 @@
-<article *ngFor="let product of products">
-  <header>
-    <h2>{{product.title}}</h2>
-  </header>
-  <div class="post-container">
-    <a href="" target="_blank">
-      <img src="src/content/{{product.pictureName}}">
-    </a>
-  </div>
-  <p class="post-meta">
-    <span>{{ calculatePoints(product.likes, product.dislikes) }} points</span>
-    ·
-    <span>{{product.wished}} wished</span>
-  </p>
-  <div class="post-afterbar-a in-list-view">
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="voteUp(product.id);" class="btn btn-up">
-        <img height="30" width="30" />
-      </a>
-    </div>
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="voteDown(product.id);" class="btn btn-down">
-        <img height="30" width="30" />
-      </a>
-    </div>
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="addToWishlist(product.id);" class="btn btn-wish">
-        <img height="30" width="30" />
-      </a>
-    </div>
-    <div class="share right">
-      <ul>
-        <li><a href="javascript:void(0);" class="btn-share facebook" rel="nofollow"><img src="src/images/facebook.png"></a></li>
-        <li><a href="javascript:void(0);" class="btn-share twitter" rel="nofollow"><img src="src/images/twitter.png"></a></li>
-				<li><a href="javascript:void(0);" class="btn-share instagram" rel="nofollow"><img src="src/images/instagram.png"></a></li>
-        <li><a href="javascript:void(0);" class="btn-share pinterest" rel="nofollow"><img src="src/images/pinterest.png"></a></li>
-      </ul>
-    </div>
-    <div class="clearBoth"></div>
-  </div>
-</article>
+<div class="page">
+	<div class="main-wrap">
+    	<section id="list-view-2">
+          <article *ngFor="let product of products">
+              <header>
+                <h2>{{product.title}}</h2>
+              </header>
+              <div class="post-container">
+                <a href="javascript:void(0);" (click)="goToProductDetails(product.id);">
+                  <img src="src/content/{{product.pictureName}}">
+                </a>
+              </div>
+              <p class="post-meta">
+                <span>{{ calculatePoints(product.likes, product.dislikes) }} points</span>
+                ·
+                <span>{{product.wished}} wished</span>
+              </p>
+              <div class="post-afterbar-a in-list-view">
+                <div class="vote btn-vote">
+                  <a href="javascript:void(0);" (click)="voteUp(product.id);" class="btn btn-up">
+                    <img height="30" width="30" />
+                  </a>
+                </div>
+                <div class="vote btn-vote">
+                  <a href="javascript:void(0);" (click)="voteDown(product.id);" class="btn btn-down">
+                    <img height="30" width="30" />
+                  </a>
+                </div>
+                <div class="vote btn-vote">
+                  <a href="javascript:void(0);" (click)="addToWishlist(product.id);" class="btn btn-wish">
+                    <img height="30" width="30" />
+                  </a>
+                </div>
+                <div class="share right">
+                  <ul>
+                    <li><a href="javascript:void(0);" class="btn-share facebook" rel="nofollow"><img src="src/images/facebook.png"></a></li>
+                    <li><a href="javascript:void(0);" class="btn-share twitter" rel="nofollow"><img src="src/images/twitter.png"></a></li>
+				            <li><a href="javascript:void(0);" class="btn-share instagram" rel="nofollow"><img src="src/images/instagram.png"></a></li>
+                    <li><a href="javascript:void(0);" class="btn-share pinterest" rel="nofollow"><img src="src/images/pinterest.png"></a></li>
+                  </ul>
+                </div>
+                <div class="clearBoth"></div>
+              </div>
+          </article>
+   		</section>
+	</div>
+</div>

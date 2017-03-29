@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Product } from '../models/product';
 
@@ -14,7 +15,7 @@ export class ProductsListComponent implements OnInit {
 
   public products: Product[];
 
-  constructor(private productsService: ProductsService) {
+  constructor(private router: Router, private productsService: ProductsService) {
     this.products = this.productsService.getProducts();
   }
 
@@ -35,6 +36,10 @@ export class ProductsListComponent implements OnInit {
 
   public addToWishlist(productId: number): void {
     this.productsService.addToWishlist(productId);
+  }
+
+  public goToProductDetails(productId: number): void {
+    this.router.navigate(['/productDetails', productId]);
   }
 
 }
