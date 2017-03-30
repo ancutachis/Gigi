@@ -11,14 +11,12 @@
 	left:15%;
 }
 
-section#list-view-2 {
-	margin:20px 0 0;
-}
-
 article {
 	margin-bottom:30px;
+	margin-right:0;
 	border-top:2px solid #eee;
 	padding:20px 0 0;
+	width: 100%;
 }
 
 article:first-child {
@@ -57,7 +55,6 @@ p.post-meta span {
 .post-container a img {
 	display:block;
 	width:100%;
-    padding:1px;
     border:5px solid #fff;
 }
 

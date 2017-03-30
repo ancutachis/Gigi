@@ -42,4 +42,11 @@ export class ProductsListComponent implements OnInit {
     this.router.navigate(['/productDetails', productId]);
   }
 
+  public FBShare(productId: number): void {
+    let windowObjectReference = window.open(
+      'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('www.brightmania.com/productDetails/' + productId),
+      'facebook-share-dialog',
+      'idth=626,height=436');
+  }
+
 }
