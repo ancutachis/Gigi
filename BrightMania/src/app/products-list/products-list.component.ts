@@ -46,7 +46,16 @@ export class ProductsListComponent implements OnInit {
     let windowObjectReference = window.open(
       'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('www.brightmania.com/productDetails/' + productId),
       'facebook-share-dialog',
-      'idth=626,height=436');
+      'width=626, height=436');
+  }
+
+  public TwitterShare(productId: number, title: string): void {
+    
+    let url = 'www.brightmania.com/productDetails/' + productId;
+    let windowObjectReference = window.open(
+      'https://twitter.com/intent/tweet?text=' + title + ' ' + url + '&url=' + encodeURIComponent(url),
+      'twitter-share-dialog',
+      'width=626, height=436');
   }
 
 }
