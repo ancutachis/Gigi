@@ -58,4 +58,14 @@ export class ProductsListComponent implements OnInit {
       'width=626, height=436');
   }
 
+  public PinterestShare(productId: number, pictureName: string): void {
+    
+    let url = 'www.brightmania.com/productDetails/' + productId;
+    let windowObjectReference = window.open(
+      'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent('www.brightmania.com/productDetails/' + productId) +
+                                                    '&media=' + 'www.brightmania.com/content/' + pictureName,
+      'pinterest-share-dialog',
+      'width=626, height=436');
+  }
+
 }
