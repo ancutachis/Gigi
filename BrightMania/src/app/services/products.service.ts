@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Http, Response } from '@angular/http';
+
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
 
 import { Product } from '../models/product';
 
 @Injectable()
 export class ProductsService {
+  private _productsUrl = 'https://bright-mania.herokuapp.com/products';
 
   private products: Product[] = [
           new Product(1, new Date(2017, 3, 27), 'Avoid Sandwich Theft Bag', 'Tired of having your food stolen by sticky-fingered co-workers or roommates?  Bullies taking your kid\'s lunch?  Well\, if so\, worry no more!  The sandwich bags that have green splotches printed on both sides\, making your freshly prepared lunch look spoiled. Don\'t suffer the injustice of having your sandwich stolen again! Protect your lunch with our anti-theft sandwich bags!', 'sandwichtheftbag.jpg', 'Lifestyle', 'Admin', 5, 3, 1, 'Amazon', 'https://www.amazon.com/exec/obidos/ASIN/B00JLSVDYO/om-btm-20/?ie=UTF8', true, 1),
@@ -21,11 +29,11 @@ export class ProductsService {
           new Product(13, new Date(2017, 3, 26), 'Dog Umbrella', 'No more wet dog shaking itself in the house! Keep your pet happy and dry in rain, sleet or snow! Clear umbrella body allows for full view of your pet while walking. Now you can protect your pet from the harsh elements with a uniquely designed umbrella especially made for pets. Simply attach the built-in leash to the collar or harness, push umbrella into position to form a dome shape over your pet and begin walking.', 'dogumbrella2.jpg', 'Pets', 'Admin', 3, 5, 0, 'Amazon', 'https://www.amazon.com/Umbrella-Keeps-your-Comfortable-Rain/dp/B005ESZL2A/ref=sr_1_2?s=pet-supplies&ie=UTF8&qid=1373474942&sr=1-2&keywords=dog+umbrella', false, 5),
   ];
 
-  constructor() { }
+  constructor(private _http: Http) { }
 
-  public getProducts(): Product[] {
+  /*public getProducts(): Product[] {
     return this.products.filter(item => item.cover == true);
-  }
+  }*/
 
   public voteUp(productId: number): void {
     let product = this.products.filter(item => item.id == productId)[0];
@@ -41,5 +49,28 @@ export class ProductsService {
     let product = this.products.filter(item => item.id == productId)[0];
     product.wished += 1;
   }
+
+
+
+  getProducts(): Observable<Product[]> {
+    return this._http.get(this._productsUrl)
+      .map((response: Response) => <Product[]> response.json())
+      .do(data => console.log('All: ' +  JSON.stringify(data)))
+      .catch(this.handleError);
+  }
+
+  getProduct(id: number): Observable<Product> {
+    return this._http.get(this._productsUrl + '/' + id)
+      .map((response: Response) => <Product> response.json())
+      .do(data => console.log('Product by id: ' +  JSON.stringify(data)))
+      .catch(this.handleError);
+  }
+
+    private handleError(error: Response) {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        console.error(error);
+        return Observable.throw(error.json().error || 'Server error');
+    }
 
 }

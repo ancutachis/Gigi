@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 import { Product } from '../models/product';
 
@@ -14,12 +15,15 @@ import { ProductsService } from '../services/products.service';
 export class ProductsListComponent implements OnInit {
 
   public products: Product[];
+  private errorMessage;
 
   constructor(private router: Router, private productsService: ProductsService) {
-    this.products = this.productsService.getProducts();
   }
 
   ngOnInit() {
+    this.productsService.getProducts()
+                .subscribe(products => this.products = products,
+                           error => this.errorMessage = <any>error);
   }
 
   public calculatePoints(likes: number, dislikes: number): number {

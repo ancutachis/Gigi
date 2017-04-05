@@ -1,11 +1,11 @@
 export class Product {
 
-    constructor(id, timeStamp, title, description, pictureName, category, addedBy, likes, dislikes, wished, retailerName, link, cover, galleryId) {
+    constructor(id, timeStamp, title, description, imagePath, category, addedBy, likes, dislikes, wished, retailerName, link, cover, galleryId) {
         this.id = id;
         this.timeStamp = timeStamp;
         this.title = title;
         this.description = description;
-        this.pictureName = pictureName;
+        this.imagePath = imagePath; //todo: to decide if we should use imagePath or pictureName
         this.category = category;
         this.addedBy = addedBy;
         this.likes = likes;
@@ -21,7 +21,7 @@ export class Product {
     public timeStamp: Date;
     public title: string;
     public description: string;
-    public pictureName: string;
+    public imagePath: string;
     public category: string;
     public addedBy: string;
     public likes: number;
