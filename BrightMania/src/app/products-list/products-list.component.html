@@ -5,7 +5,7 @@
                 <h2>{{product.title}}</h2>
               </header>
               <div class="post-container">
-                <a href="javascript:void(0);" (click)="goToProductDetails(product.id);">
+                <a href="javascript:void(0);" (click)="goToProductDetails(product._id);">
                   <img src="src/content/{{product.imagePath}}">
                 </a>
               </div>
@@ -16,25 +16,25 @@
               </p>
               <div class="post-afterbar-a in-list-view">
                 <div class="vote btn-vote">
-                  <a href="javascript:void(0);" (click)="voteUp(product.id);" class="btn btn-up">
+                  <a href="javascript:void(0);" (click)="voteUp(product._id);" class="btn btn-up">
                     <img height="30" width="30" />
                   </a>
                 </div>
                 <div class="vote btn-vote">
-                  <a href="javascript:void(0);" (click)="voteDown(product.id);" class="btn btn-down">
+                  <a href="javascript:void(0);" (click)="voteDown(product._id);" class="btn btn-down">
                     <img height="30" width="30" />
                   </a>
                 </div>
                 <div class="vote btn-vote">
-                  <a href="javascript:void(0);" (click)="addToWishlist(product.id);" class="btn btn-wish">
+                  <a href="javascript:void(0);" (click)="addToWishlist(product._id);" class="btn btn-wish">
                     <img height="30" width="30" />
                   </a>
                 </div>
                 <div class="share right">
                   <ul>
-                    <li><a href="javascript:void(0);" class="btn-share facebook" (click)="FBShare(product.id);"><img src="src/images/facebook.png"></a></li>
-                    <li><a href="javascript:void(0);" class="btn-share twitter" (click)="TwitterShare(product.id, product.title);"><img src="src/images/twitter.png"></a></li>
-				            <li><a href="javascript:void(0);" class="btn-share pinterest" (click)="PinterestShare(product.id, product.imagePath);"><img src="src/images/pinterest.png"></a></li>
+                    <li><a href="javascript:void(0);" class="btn-share facebook" (click)="FBShare(product._id);"><img src="src/images/facebook.png"></a></li>
+                    <li><a href="javascript:void(0);" class="btn-share twitter" (click)="TwitterShare(product._id, product.title);"><img src="src/images/twitter.png"></a></li>
+				            <li><a href="javascript:void(0);" class="btn-share pinterest" (click)="PinterestShare(product._id, product.imagePath);"><img src="src/images/pinterest.png"></a></li>
                   </ul>
                 </div>
                 <div class="clearBoth"></div>

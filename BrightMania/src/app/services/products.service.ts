@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
+import 'rxjs/add/operator/mergeMap';
 
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -31,27 +32,6 @@ export class ProductsService {
 
   constructor(private _http: Http) { }
 
-  /*public getProducts(): Product[] {
-    return this.products.filter(item => item.cover == true);
-  }*/
-
-  public voteUp(productId: number): void {
-    let product = this.products.filter(item => item.id == productId)[0];
-    product.likes += 1;
-  }
-
-  public voteDown(productId: number): void {
-    let product = this.products.filter(item => item.id == productId)[0];
-    product.dislikes += 1;
-  }
-
-  public addToWishlist(productId: number): void {
-    let product = this.products.filter(item => item.id == productId)[0];
-    product.wished += 1;
-  }
-
-
-
   getProducts(): Observable<Product[]> {
     return this._http.get(this._productsUrl)
       .map((response: Response) => <Product[]> response.json())
@@ -60,10 +40,68 @@ export class ProductsService {
   }
 
   getProduct(id: number): Observable<Product> {
-    return this._http.get(this._productsUrl + '/' + id)
+    return this._http.get(`${this._productsUrl}/${id}`)
       .map((response: Response) => <Product> response.json())
       .do(data => console.log('Product by id: ' +  JSON.stringify(data)))
       .catch(this.handleError);
+  }
+
+  public voteUp(productId: number): void {
+
+    const url = `${this._productsUrl}/${productId}`;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    this._http.get(url)
+      .map((response: Response) => <Product> response.json())
+      .subscribe(
+        (data) => {
+            data.likes += 1;
+            this._http
+            .put(url, JSON.stringify(data), {headers: headers})
+            .subscribe( (d) => {
+            })
+          }
+        );
+  }
+
+
+  public voteDown(productId: number): void {
+
+    const url = `${this._productsUrl}/${productId}`;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    this._http.get(url)
+      .map((response: Response) => <Product> response.json())
+      .subscribe(
+        (data) => {
+            data.dislikes += 1;
+            this._http
+            .put(url, JSON.stringify(data), {headers: headers})
+            .subscribe( (d) => {
+            })
+          }
+        );
+  }
+
+public addToWishlist(productId: number): void {
+
+    const url = `${this._productsUrl}/${productId}`;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    this._http.get(url)
+      .map((response: Response) => <Product> response.json())
+      .subscribe(
+        (data) => {
+            data.wished += 1;
+            this._http
+            .put(url, JSON.stringify(data), {headers: headers})
+            .subscribe( (d) => {
+            })
+          }
+        );
   }
 
     private handleError(error: Response) {
