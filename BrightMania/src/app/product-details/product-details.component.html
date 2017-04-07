@@ -1,3 +1,49 @@
-<p>
-  product-details works!
-</p>
+<article>
+  <header>
+    <h2>Test GIF</h2>
+	</header>
+  <div class="left vote btn-vote" style="display: inline-block;">
+    <a href="javascript:void(0);" (click)="voteDown(product._id);" class="btn btn-down">
+      <img height="30" width="30" />
+    </a>
+  </div>
+  <p class="post-meta" style="display: inline-block;">
+	  <span>30 points</span>
+    ·
+    <span>20 wished</span>
+  </p>
+  <div class="right vote btn-vote" style="display: inline-block;">
+    <a href="javascript:void(0);" (click)="voteUp(product._id);" class="btn btn-up">
+      <img height="30" width="30" />
+    </a>
+  </div>   
+	<div class="post-container">
+	  <img src="http://9gag.wpforests.com/wp-content/uploads/2017/01/source.gif" />
+	</div>  
+  <div class="post-afterbar-a in-list-view">
+    <div class="vote btn-vote">
+      <a href="javascript:void(0);" (click)="voteUp(product._id);" class="btn btn-up">
+        <img height="30" width="30" />
+      </a>
+    </div>
+    <div class="vote btn-vote">
+      <a href="javascript:void(0);" (click)="voteDown(product._id);" class="btn btn-down">
+        <img height="30" width="30" />
+      </a>
+    </div>
+    <div class="vote btn-vote">
+      <a href="javascript:void(0);" (click)="addToWishlist(product._id);" class="btn btn-wish">
+        <img height="30" width="30" />
+      </a>
+    </div>
+    <div class="share right">
+      <ul>
+        <li><a href="javascript:void(0);" class="btn-share facebook" (click)="FBShare(product._id);"><img src="src/images/facebook.png"></a></li>
+        <li><a href="javascript:void(0);" class="btn-share twitter" (click)="TwitterShare(product._id, product.title);"><img src="src/images/twitter.png"></a></li>
+				<li><a href="javascript:void(0);" class="btn-share pinterest" (click)="PinterestShare(product._id, product.imagePath);"><img src="src/images/pinterest.png"></a></li>
+      </ul>
+    </div>
+    <div class="clearBoth"></div>
+  </div>   
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</article>

@@ -1,0 +1,150 @@
+article {
+	margin-bottom:30px;
+	margin-right:0;
+	border-top:2px solid #eee;
+	padding:20px 0 0;
+	width: 100%;
+}
+
+article:first-child {
+	border:0;
+}
+
+header {
+	margin-bottom:10px;
+	position:relative;
+}
+
+h2 {
+	word-wrap:break-word;
+	font-size:20px;
+	color:#000;
+}
+
+.buy {
+    position: absolute;
+    display: block;
+    color: #fff;
+    top: 49px;
+    left: 570px;
+    font-size: 16px;
+    text-align: center;
+    font-family: "Open Sans",sans-serif;
+	width: 0;
+	height: 0;
+	border-top: 100px solid blue;
+	border-left: 100px solid transparent;
+}
+
+p.post-meta {
+	color:#587272;
+	margin:10px 0;
+}
+
+p.post-meta span {
+	font-size: 1.2em;
+}
+
+.post-container {
+	width:100%;
+	position:relative;
+	display:block;
+}
+
+.post-container img {
+	display:block;
+	width:100%;
+    border:5px solid #fff;
+}
+
+.post-afterbar-a {
+	position:relative;
+	margin:10px 0;
+	padding-bottom:0;
+}
+
+.post-afterbar-a.in-list-view {
+	width:100%;
+}
+
+.post-afterbar-a .share {
+	float:left;
+}
+
+.post-afterbar-a .share ul {
+	overflow:hidden;
+	list-style-type:none;
+}
+
+.post-afterbar-a .share li {
+	float:left;
+	margin-right:10px;
+}
+
+.post-afterbar-a .share.right li {
+	margin:0 0 0 10px;
+}
+
+.right {
+    float: right!important;
+}
+
+.post-afterbar-a .btn-share img {
+	width:45px;
+	height:45px;
+}
+
+.post-afterbar-a .btn-share img:hover {
+	opacity: 0.7;
+}
+
+.btn-vote {
+	overflow:hidden;
+}
+
+.btn-vote a {
+	box-sizing:border-box;
+	border:1px solid #ddd;
+	display:block;
+	text-indent:-999px;
+	position:relative;
+	border-radius: 2px;
+}
+
+.vote {
+	float:left;
+}
+
+.vote a.btn {
+	background-repeat:no-repeat;
+	background-size:100%;
+	background-origin:content-box;
+	padding-right:3px;
+	width:50px;
+	height:50px;
+	background-color:inherit;
+}
+
+.btn-up {
+	background-image:url(../../images/up.png);
+}
+
+.btn-up.active {
+	background-image:url(../../images/up_active.png);
+}
+
+.vote a.btn.btn-down {
+	background-image:url(../../images/down.png);
+}
+
+.vote a.btn.btn-wish {
+	background-image:url(../../images/wish.png);
+}
+
+.vote a.btn:hover {
+	opacity: 0.7;
+}
+
+.left {
+	float:left;
+}
