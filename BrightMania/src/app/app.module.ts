@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { SwiperModule } from '../../node_modules/angular2-useful-swiper';
+
 import { AppComponent } from './app.component';
 
 import { ProductsListComponent } from './products-list/products-list.component';
@@ -21,6 +23,7 @@ import { ProductsService } from './services/products.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    SwiperModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/productsList', pathMatch: 'full' },
       { path: 'productsList', component: ProductsListComponent },

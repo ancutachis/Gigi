@@ -18,7 +18,20 @@
     </a>
   </div>   
 	<div class="post-container">
-	  <img src="http://9gag.wpforests.com/wp-content/uploads/2017/01/source.gif" />
+	  <swiper [config]="config">
+      <div class="swiper-wrapper">
+        <img class="swiper-slide" src="src/images/kitchen_adventurer_cheesecake_brownie.jpg" />
+        <img class="swiper-slide" src="src/images/kitchen_adventurer_lemon.jpg" />
+        <img class="swiper-slide" src="src/images/kitchen_adventurer_donut.jpg" />
+        <img class="swiper-slide" src="src/images/kitchen_adventurer_caramel.jpg" />
+      </div>
+      <!--<div class="swiper-wrapper">
+        <img class="swiper-slide" *ngFor="let image of images" [src]="image">
+      </div>-->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </swiper>
 	</div>  
   <div class="post-afterbar-a in-list-view">
     <div class="vote btn-vote">
