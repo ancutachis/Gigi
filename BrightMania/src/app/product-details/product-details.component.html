@@ -1,33 +1,23 @@
-<article>
+<article *ngIf="product">
   <header>
-    <h2>Test GIF</h2>
+    <h2>{{product.title}}</h2>
 	</header>
-  <div class="left vote btn-vote" style="display: inline-block;">
-    <a href="javascript:void(0);" (click)="voteDown(product._id);" class="btn btn-down">
-      <img height="30" width="30" />
-    </a>
+  <div class="left">
+    <a href="javascript:void(0);" (click)="navigatePrev();" class="nav prev">Prev</a>
   </div>
   <p class="post-meta" style="display: inline-block;">
-	  <span>30 points</span>
+	  <span>{{ calculatePoints(product.likes, product.dislikes) }} points</span>
     ·
-    <span>20 wished</span>
+    <span>{{product.wished}} wished</span>
   </p>
-  <div class="right vote btn-vote" style="display: inline-block;">
-    <a href="javascript:void(0);" (click)="voteUp(product._id);" class="btn btn-up">
-      <img height="30" width="30" />
-    </a>
+  <div class="right">
+    <a href="javascript:void(0);" (click)="navigateNext();" class="nav next">Next</a>
   </div>   
 	<div class="post-container">
 	  <swiper [config]="config">
       <div class="swiper-wrapper">
-        <img class="swiper-slide" src="src/images/kitchen_adventurer_cheesecake_brownie.jpg" />
-        <img class="swiper-slide" src="src/images/kitchen_adventurer_lemon.jpg" />
-        <img class="swiper-slide" src="src/images/kitchen_adventurer_donut.jpg" />
-        <img class="swiper-slide" src="src/images/kitchen_adventurer_caramel.jpg" />
+        <img *ngFor="let image of images" class="swiper-slide" src="src/content/{{image}}"> 
       </div>
-      <!--<div class="swiper-wrapper">
-        <img class="swiper-slide" *ngFor="let image of images" [src]="image">
-      </div>-->
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -49,6 +39,9 @@
         <img height="30" width="30" />
       </a>
     </div>
+    <div style="display: inline-block;">
+      <a href="{{product.link}}" class="iWant">Want</a>
+    </div>
     <div class="share right">
       <ul>
         <li><a href="javascript:void(0);" class="btn-share facebook" (click)="FBShare(product._id);"><img src="src/images/facebook.png"></a></li>
@@ -58,5 +51,5 @@
     </div>
     <div class="clearBoth"></div>
   </div>   
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <p>{{product.description}}</p>
 </article>

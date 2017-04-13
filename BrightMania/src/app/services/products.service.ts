@@ -15,8 +15,8 @@ export class ProductsService {
   private _productsUrl = 'https://bright-mania.herokuapp.com/products';
 
   private products: Product[] = [
-          new Product(1, new Date(2017, 3, 27), 'Avoid Sandwich Theft Bag', 'Tired of having your food stolen by sticky-fingered co-workers or roommates?  Bullies taking your kid\'s lunch?  Well\, if so\, worry no more!  The sandwich bags that have green splotches printed on both sides\, making your freshly prepared lunch look spoiled. Don\'t suffer the injustice of having your sandwich stolen again! Protect your lunch with our anti-theft sandwich bags!', 'sandwichtheftbag.jpg', 'Lifestyle', 'Admin', 5, 3, 1, 'Amazon', 'https://www.amazon.com/exec/obidos/ASIN/B00JLSVDYO/om-btm-20/?ie=UTF8', true, 1),
-          new Product(2, new Date(2017, 3, 27), 'Avoid Sandwich Theft Bag', 'Tired of having your food stolen by sticky-fingered co-workers or roommates?  Bullies taking your kid\'s lunch?  Well\, if so\, worry no more!  The sandwich bags that have green splotches printed on both sides\, making your freshly prepared lunch look spoiled. Don\'t suffer the injustice of having your sandwich stolen again! Protect your lunch with our anti-theft sandwich bags!', 'sandwichtheftbag2.jpg', 'Lifestyle', 'Admin', 5, 3, 1, 'Amazon', 'https://www.amazon.com/exec/obidos/ASIN/B00JLSVDYO/om-btm-20/?ie=UTF8', false, 1),
+          new Product(1, new Date(2017, 3, 27), 'Avoid Sandwich Theft Bag', 'Tired of having your food stolen by sticky-fingered co-workers or roommates?  Bullies taking your kid\'s lunch?  Well\, if so\, worry no more!  The sandwich bags that have green splotches printed on both sides\, making your freshly prepared lunch look spoiled. Don\'t suffer the injustice of having your sandwich stolen again! Protect your lunch with anti-theft sandwich bags!', 'sandwichtheftbag.jpg', 'Lifestyle', 'Admin', 5, 3, 1, 'Amazon', 'https://www.amazon.com/exec/obidos/ASIN/B00JLSVDYO/om-btm-20/?ie=UTF8', true, 1),
+          new Product(2, new Date(2017, 3, 27), 'Avoid Sandwich Theft Bag', 'Tired of having your food stolen by sticky-fingered co-workers or roommates?  Bullies taking your kid\'s lunch?  Well\, if so\, worry no more!  The sandwich bags that have green splotches printed on both sides\, making your freshly prepared lunch look spoiled. Don\'t suffer the injustice of having your sandwich stolen again! Protect your lunch with anti-theft sandwich bags!', 'sandwichtheftbag2.jpg', 'Lifestyle', 'Admin', 5, 3, 1, 'Amazon', 'https://www.amazon.com/exec/obidos/ASIN/B00JLSVDYO/om-btm-20/?ie=UTF8', false, 1),
           new Product(3, new Date(2017, 3, 28), 'Baby Mop', 'Teach your baby a strong work ethic early on in their life. Baby will get a nice workout, burn off energy, and do muscle toning. And sleep better too! These baby mops are super soft and comfortable. The mop is made using ultra absorbent materials and engineered to clean and shine your floor.', 'babymop.jpg', 'Fashion', 'Admin', 8, 2, 5, 'Better than Pants', 'http://www.betterthanpants.com/baby-mop.html', true, 2),
           new Product(4, new Date(2017, 3, 28), 'Baby Mop', 'Teach your baby a strong work ethic early on in their life. Baby will get a nice workout, burn off energy, and do muscle toning. And sleep better too! These baby mops are super soft and comfortable. The mop is made using ultra absorbent materials and engineered to clean and shine your floor.', 'babymop2.jpg', 'Fashion', 'Admin', 8, 2, 5, 'Better than Pants', 'http://www.betterthanpants.com/baby-mop.html', false, 2),
           new Product(5, new Date(2017, 3, 26), 'Beard Hat', 'Can\'t grow a beard? Your face gets painfully cold in the winter? Then Beardo beard hat is your answer! Beard hats are ideal for use for any outdoor activity and makes a great gift! They are also becoming popular Hockey fan beards and a great way to support your favorite NHL Hockey team!', 'beardhat.jpg', 'Fashion', 'Admin', 6, 2, 2, 'Beardo Wear', 'https://www.beardowear.com/collections/beard-hat/products/beard-hat-black', true, 3),
@@ -44,6 +44,19 @@ export class ProductsService {
       .map((response: Response) => <Product> response.json())
       .do(data => console.log('Product by id: ' +  JSON.stringify(data)))
       .catch(this.handleError);
+  }
+
+  getProductOld(productId: number): Product {
+    return this.products.filter(x => x.id == productId)[0];
+  }
+
+  getProductImages(productId: number): string[] {
+    let images: string[] = [];
+    let galleryId = this.products.filter(x => x.id == productId)[0].galleryId;
+    for (let entry of this.products.filter(x => x.galleryId == galleryId)) {
+      images.push(entry.imagePath);
+    }
+    return images;
   }
 
   public voteUp(productId: number): void {

@@ -42,10 +42,6 @@ export class ProductsListComponent implements OnInit {
     this.productsService.addToWishlist(productId);
   }
 
-  public goToProductDetails(productId: number): void {
-    this.router.navigate(['/productDetails', productId]);
-  }
-
   public FBShare(productId: number): void {
     let windowObjectReference = window.open(
       'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('www.brightmania.com/productDetails/' + productId),
@@ -53,8 +49,7 @@ export class ProductsListComponent implements OnInit {
       'width=626, height=436');
   }
 
-  public TwitterShare(productId: number, title: string): void {
-    
+  public TwitterShare(productId: number, title: string): void {  
     let url = 'www.brightmania.com/productDetails/' + productId;
     let windowObjectReference = window.open(
       'https://twitter.com/intent/tweet?text=' + title + ' ' + url + '&url=' + encodeURIComponent(url),
@@ -62,8 +57,7 @@ export class ProductsListComponent implements OnInit {
       'width=626, height=436');
   }
 
-  public PinterestShare(productId: number, pictureName: string): void {
-    
+  public PinterestShare(productId: number, pictureName: string): void { 
     let url = 'www.brightmania.com/productDetails/' + productId;
     let windowObjectReference = window.open(
       'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent('www.brightmania.com/productDetails/' + productId) +

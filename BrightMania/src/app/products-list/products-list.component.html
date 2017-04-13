@@ -3,7 +3,7 @@
     <h2>{{product.title}}</h2>
   </header>
   <div class="post-container">
-    <a href="javascript:void(0);" (click)="goToProductDetails(product._id);">
+    <a [routerLink]="['/productDetails', product._id]">
       <img src="src/content/{{product.imagePath}}">
     </a>
   </div>
