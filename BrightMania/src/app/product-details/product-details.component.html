@@ -3,7 +3,10 @@
     <h2>{{product.title}}</h2>
 	</header>
   <div class="left">
-    <a href="javascript:void(0);" (click)="navigatePrev();" class="nav prev">Prev</a>
+    <a href="#" class="btn btn-primary btn-sm dispTable" (click)="navigatePrev();">
+      <span class="arrowLeft"></span>
+      <span class="padLeft5">Prev</span>
+    </a>
   </div>
   <p class="post-meta" style="display: inline-block;">
 	  <span>{{ calculatePoints(product.likes, product.dislikes) }} points</span>
@@ -11,12 +14,18 @@
     <span>{{product.wished}} wished</span>
   </p>
   <div class="right">
-    <a href="javascript:void(0);" (click)="navigateNext();" class="nav next">Next</a>
+    <a href="#" class="btn btn-primary btn-sm dispTable" (click)="navigateNext();">
+      <span class="padRight5">Next</span>
+      <span class="arrowRight"></span>
+    </a>
   </div>   
 	<div class="post-container">
 	  <swiper [config]="config">
       <div class="swiper-wrapper">
         <img *ngFor="let image of images" class="swiper-slide" src="src/content/{{image}}"> 
+        <a href="#" (click)="addToWishlist(product._id);">
+          <span class="wish" [ngClass]="{'heart': !wished, 'heartFilled': wished}"></span>
+        </a>
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
@@ -24,23 +33,19 @@
     </swiper>
 	</div>  
   <div class="post-afterbar-a in-list-view">
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="voteUp(product._id);" class="btn btn-up">
-        <img height="30" width="30" />
+    <div class="left">
+      <a href="#" (click)="voteUp(product._id);" class="iconBtn btn btn-primary" [ngClass]="{'btn-info': status == 'none', 'btn-success': status == 'like'}">
+        <span class="voteUp"></span>
+      </a>
+      <a href="#" (click)="voteDown(product._id);" class="iconBtn btn btn-primary" [ngClass]="{'btn-info': status == 'none', 'btn-danger': status == 'dislike'}">
+        <span class="voteDown"></span>
       </a>
     </div>
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="voteDown(product._id);" class="btn btn-down">
-        <img height="30" width="30" />
+    <div class="dispIB">
+      <a href="{{product.link}}" class="btn btn-primary btn-success dispTable">
+        <span class="star"></span>
+        <span class="padLeft5">Get !t</span>
       </a>
-    </div>
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="addToWishlist(product._id);" class="btn btn-wish">
-        <img height="30" width="30" />
-      </a>
-    </div>
-    <div style="display: inline-block;">
-      <a href="{{product.link}}" class="iWant">Want</a>
     </div>
     <div class="share right">
       <ul>

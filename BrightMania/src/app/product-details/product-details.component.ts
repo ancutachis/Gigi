@@ -27,6 +27,9 @@ export class ProductDetailsComponent implements OnInit {
 
   public images: string[];
 
+  public wished: boolean = false;
+  public status: string = "none";
+
   constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
