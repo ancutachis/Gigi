@@ -38,10 +38,6 @@ export class ProductsListComponent implements OnInit {
     this.productsService.voteDown(productId);
   }
 
-  public addToWishlist(productId: number): void {
-    this.productsService.addToWishlist(productId);
-  }
-
   public FBShare(productId: number): void {
     let windowObjectReference = window.open(
       'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('www.brightmania.com/productDetails/' + productId),

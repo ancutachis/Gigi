@@ -2,30 +2,29 @@
   <header>
     <h2>{{product.title}}</h2>
   </header>
-  <div class="post-container">
-    <a [routerLink]="['/productDetails', product._id]">
-      <img src="src/content/{{product.imagePath}}">
-    </a>
-  </div>
   <p class="post-meta">
     <span>{{ calculatePoints(product.likes, product.dislikes) }} points</span>
     ·
     <span>{{product.wished}} wished</span>
   </p>
+  <div class="post-container">
+    <a [routerLink]="['/productDetails', product._id]">
+      <img src="src/content/{{product.imagePath}}">
+    </a>
+  </div>
   <div class="post-afterbar-a in-list-view">
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="voteUp(product._id);" class="btn btn-up">
-        <img height="30" width="30" />
+    <div class="left">
+      <a href="#" (click)="voteUp(product._id);" class="iconBtn btn btn-primary" [ngClass]="{'btn-info': status == 'none', 'btn-success': status == 'like'}">
+        <span class="voteUp"></span>
+      </a>
+      <a href="#" (click)="voteDown(product._id);" class="iconBtn btn btn-primary" [ngClass]="{'btn-info': status == 'none', 'btn-danger': status == 'dislike'}">
+        <span class="voteDown"></span>
       </a>
     </div>
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="voteDown(product._id);" class="btn btn-down">
-        <img height="30" width="30" />
-      </a>
-    </div>
-    <div class="vote btn-vote">
-      <a href="javascript:void(0);" (click)="addToWishlist(product._id);" class="btn btn-wish">
-        <img height="30" width="30" />
+    <div class="dispIB">
+      <a href="{{product.link}}" class="btn btn-primary btn-success dispTable">
+        <span class="star"></span>
+        <span class="padLeft5">Get !t</span>
       </a>
     </div>
     <div class="share right">
@@ -36,5 +35,5 @@
       </ul>
     </div>
     <div class="clearBoth"></div>
-  </div>
+  </div> 
 </article>
