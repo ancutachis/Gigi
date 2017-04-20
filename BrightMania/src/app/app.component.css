@@ -1,5 +1,9 @@
 /*-- MENU --*/
 
+.margLeft {
+    margin-left: 15px;
+}
+
 #header {
     width:100%;
     text-align:center;
@@ -61,24 +65,10 @@
     background-color:#111;
 }
 
-#nav-right, #nav-right-r {
-    position:absolute;
-    top:0;
-}
-
 #nav-right {
-    right:130px;
+    position:absolute;
+    right:0;
     border-left:1px solid #444;
-}
-
-#nav-right-r {
-    width:127px;
-    right:0px;
-}
-
-ul.nav-right-r li {
-    float:left;
-    height:60px;
 }
 
 #nav-right li {
@@ -92,43 +82,6 @@ ul.nav-right-r li {
     height:60px;
     line-height:60px;
     border-right:1px solid #444;
-}
-
-#nav-right .li-search a {
-    background:url(../images/search.png) no-repeat 50% 50%;
-}
-
-#nav-right a:active {
-    background-position:50% 55%;
-}
-
-.side-register a {
-    color:#fff;
-    font-size:11px;
-    line-height:14px;
-    font-weight:bold;
-    padding:7px 10px;
-    margin:15px 9px 0;
-    border-radius:5px;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    display:block;
-    text-shadow:0 -1px rgba(0,0,0,.2);
-    box-shadow:0 0 0 1px rgba(255,255,255,.2) inset;
-    text-align:center;
-    width:89px;
-}
-
-.side-register a.signup-button:hover {
-    background-color:#555;
-    color:#fff!important;
-    box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 1px 2px #111;
-}
-
-.side-register a.signup-button {
-    background-color:#3256f3;
-    -webkit-animation:glow 2s infinite;
-    -moz-animation:glow 2s infinite;
 }
 
 /* CONTENT */
