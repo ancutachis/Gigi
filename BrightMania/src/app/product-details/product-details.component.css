@@ -9,6 +9,12 @@
 }
 /* End */
 
+.main-wrap {
+	width:80%;
+	position:relative;
+	left:10%;
+}
+
 article {
 	margin-bottom:30px;
 	margin-right:0;

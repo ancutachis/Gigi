@@ -22,7 +22,7 @@ article {
 }
 
 article:first-child {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 header {	
@@ -35,6 +35,7 @@ h2 {
 	margin-bottom: 0px !important;
 	word-wrap:break-word;
 	font-size:20px;
+	font-weight: bold;
 	color:#000;
 }
 

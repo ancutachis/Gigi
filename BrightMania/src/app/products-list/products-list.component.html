@@ -1,4 +1,5 @@
-<article *ngFor="let product of products">
+<div class="main-content" style="display: inline-block; vertical-align: top; margin-right: 50px;">
+  <article *ngFor="let product of products">
   <header>
     <h2>{{product.title}}</h2>
   </header>
@@ -36,4 +37,9 @@
     </div>
     <div class="clearBoth"></div>
   </div> 
-</article>
+  </article>
+</div>
+
+<div class="side-content" style="display: inline-block; vertical-align: top; max-width:250px;">
+  <app-side-content></app-side-content>
+</div>

@@ -134,12 +134,6 @@ ul.nav-right-r li {
 /* CONTENT */
 
 .page {
-	width:940px;
-	margin:20px auto 40px;
-}
-
-.main-wrap {
-	width:70%;
-	position:relative;
-	left:15%;
+	width:960px;
+	margin:20px auto;
 }

@@ -1,0 +1,25 @@
+<div id="page_like">
+    <h3>WHY NOT LIKE US?</h3>
+    <div class="sep"></div>
+		<div class="fb-page" data-href="https://www.facebook.com/BrightManiaOfficial" data-tabs="timeline" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"></div>
+    <div class="sep"></div>	
+	  <a class="twitter-follow-button" href="https://twitter.com/BrightMania" data-show-count="false" data-size="large"> Follow @BrightMania</a>
+    <div class="sep"></div>
+    <div class="trending">
+      <img src="src/images/bulb_black.png" width="30" height="30">
+      <h3>TRENDING</h3>
+    </div>
+</div>
+
+<br/>
+
+<article class="side" *ngFor="let product of products">
+  <header>
+    <h4>{{product.title}}</h4>
+  </header>
+  <div class="post-container">
+    <a [routerLink]="['/productDetails', product._id]">
+      <img src="src/content/{{product.imagePath}}">
+    </a>
+  </div>
+</article>
