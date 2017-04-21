@@ -40,29 +40,18 @@
     display:block;
 }
 
-#nav a {
+#nav li a {
     display:block;
-    padding:24px 20px 23px 50px;
-    font-size:13px;
-    color:#999;
+    padding:23px 20px 23px 20px;
+    font-size:15px;
+    color:white;
     border-right:1px solid #444;
+    font-weight: bold;
 }
 
-#nav .li-1 a {
-    background:url(../images/hot-on.png) no-repeat 20px 50%;
-}
-
-#nav .li-2 a {
-    background:url(../images/hot-on.png) no-repeat 20px 50%;
-}
-
-#nav a:hover {
-    color:#fff;
-}
-
-#nav a.current {
-    color:#00A5F0;
-    background-color:#111;
+#nav li a:hover {
+    color:#55acee;
+    text-decoration: none;
 }
 
 #nav-right {
