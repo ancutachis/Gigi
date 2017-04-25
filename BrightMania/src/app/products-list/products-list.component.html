@@ -15,10 +15,10 @@
   </div>
   <div class="post-afterbar-a in-list-view">
     <div class="left">
-      <a href="#" (click)="voteUp(product._id);" class="iconBtn btn btn-primary" [ngClass]="{'btn-info': status == 'none', 'btn-success': status == 'like'}">
+      <a  (click)="voteUp(product._id);" class="iconBtn btn btn-primary" [ngClass]="{'btn-info': status == 'none', 'btn-success': status == 'like'}">
         <span class="voteUp"></span>
       </a>
-      <a href="#" (click)="voteDown(product._id);" class="iconBtn btn btn-primary" [ngClass]="{'btn-info': status == 'none', 'btn-danger': status == 'dislike'}">
+      <a (click)="voteDown(product._id);" class="iconBtn btn btn-primary" [ngClass]="{'btn-info': status == 'none', 'btn-danger': status == 'dislike'}">
         <span class="voteDown"></span>
       </a>
     </div>

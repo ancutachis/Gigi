@@ -32,6 +32,9 @@ export class ProductsListComponent implements OnInit {
 
   public voteUp(productId: number): void {
     this.productsService.voteUp(productId);
+   this.productsService.getProducts()
+                .subscribe(products => this.products = products,
+                           error => this.errorMessage = <any>error); 
   }
 
   public voteDown(productId: number): void {

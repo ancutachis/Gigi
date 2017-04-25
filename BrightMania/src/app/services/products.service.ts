@@ -73,6 +73,7 @@ export class ProductsService {
             this._http
             .put(url, JSON.stringify(data), {headers: headers})
             .subscribe( (d) => {
+              
             })
           }
         );
